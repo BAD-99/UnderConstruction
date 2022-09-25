@@ -19,14 +19,14 @@ body{
 }
 h1{
     font-family: 'Lobster';
-    font-size: 4rem;
+    font-size: clamp(1rem, 12vw, 4rem);
     margin: 1rem;
     text-align: center;
 }
 p{
     font-family: 'Bebas Neue';
     margin: 0.5rem;
-    font-size: 2rem;
+    font-size: clamp(1rem, 4vw, 2rem);
     text-align: center;
 }
 .--retro-border{
@@ -35,7 +35,7 @@ p{
     left:0;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
+    overflow: clip;
     content: '';
     display: block;
     box-shadow: 
@@ -64,17 +64,26 @@ p{
 }
 .contact-footer{
     font-family: 'Bebas Neue';
-    font-size: 1.5rem;
-    position: absolute;
+    font-size: clamp(0.5rem, 5vw, 1.5rem);
+    position: fixed;
     bottom: 0;
     right: 0;
     padding: 0.5rem;
 }
-@media only screen and (max-width: 600px){
-    .--retro-border,.--retro-corner{
+@media only screen and (max-width: 650px){
+    .--retro-border{
+        box-shadow: 
+         0 2rem 0 0 var(--gradient-cool-2) inset,
+         0 4rem 0 0 var(--gradient-cool-1) inset,
+         0 6rem 0 0 var(--gradient-mid) inset,
+         0 8rem 0 0 var(--gradient-warm-1) inset,
+         0 10rem 0 0 var(--gradient-warm-2) inset
+    ;
+    }
+    .--retro-corner{
         display: none;
     }
     .textbox{
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -35%);
     }
 }
